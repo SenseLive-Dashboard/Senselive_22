@@ -1,0 +1,142 @@
+<app-parent></app-parent>
+<button class="btn btn-secondary float-right" (click)="excelsheet()">
+  <fa-icon [icon]="faDownload"></fa-icon>
+  <!-- <i class="fa fa-th-list"></i> -->
+  <!-- <i class="fa-solid fa-download"></i> -->
+</button>
+
+
+<div class="smeter">
+  &nbsp;
+<!-- <fa-icon [icon]="faFilter" (click)="show1=!show1"></fa-icon> -->
+<button  class="smeter2" (click)="show1=!show1">Meter</button>
+<select *ngIf="show1" class="form-select form-select-lg" name="meterDet" (change)="getmeterId($event)" > 
+  <option selected disabled>Select Meter</option>
+  <option *ngFor="let mymeter of meter" [value]="mymeter.meterid" >{{mymeter.meterName}}</option>
+</select>
+</div>
+<br>
+
+<!-- <div class="table-container">
+  <table class="table" id="excel-table">
+    <tr>
+      <th scope="col" style="width: 15%;">Final Reading Time</th>
+      <th scope="col" style="width: 15%;">Initial Reading Time </th>
+     
+      <th  scope="col" style="width: 15%;">Total Time (Mins) &nbsp;
+      </th>
+      <th  scope="col" style="width: 15%;">Final KVAH &nbsp;
+      </th>
+      <th  scope="col" style="width: 15%;">Initial KVAH &nbsp;
+      </th>
+      <th  scope="col" style="width: 15%;">Total KVAH &nbsp;
+      </th>
+
+    </tr>
+    <tbody>
+
+
+      <tr *ngFor="let mydata of data2 | paginate: {itemsPerPage:20,currentPage:p};">
+        <td>{{mydata.final_reading}}</td>
+        <td>{{mydata.initial_reading}}</td>
+        <td>{{mydata.total_time}}</td>
+        <td>{{mydata.final_kvah}}</td>
+        <td>{{mydata.initial_kvah}}</td>
+        <td>{{mydata.total_kvah|number:'0.1-5'}}</td>
+       
+      </tr>
+    </tbody> -->
+
+    <!--pagination code-->
+
+  <!-- </table>
+  <div *ngIf="loader">
+    <img id="logo"  src="assets/8.gif" class="img-fluid" alt="" style="width: 8%;">  
+  </div> 
+  <pagination-controls (pageChange)="p = $event" style="width: 90%;"></pagination-controls>
+</div> -->
+
+
+  <div class="row">
+
+    <tbody class="col-2">
+
+
+      <!--search sort and pagination html-->
+      <th><strong>Final Reading Time</strong></th>
+      <tr *ngFor="let mydata of final_index_readingtime | paginate: {itemsPerPage:20,currentPage:p};">
+        <td>{{mydata}}</td>
+      </tr>
+      <!-- <tr>
+      <td *ngFor="let mydata of total_reading_time">{{mydata}}</td></tr> -->
+
+    </tbody>
+    <tbody class="col-2">
+
+
+      <!--search sort and pagination html-->
+      <th><strong>Initial Reading Time</strong></th>
+      <tr *ngFor="let mydata of initial_index_readingtime | paginate: {itemsPerPage:20,currentPage:p};">
+        <td>{{mydata}}</td>
+      </tr>
+      <!-- <tr>
+      <td *ngFor="let mydata of total_reading_time">{{mydata}}</td></tr> -->
+
+    </tbody>
+    <tbody class="col-2">
+
+
+      <!--search sort and pagination html-->
+      <th><strong>Total Time (Mins)</strong></th>
+      <tr *ngFor="let mydata of total_reading_time | paginate: {itemsPerPage:20,currentPage:p};">
+        <td>{{mydata}}</td>
+      </tr>
+      <!-- <tr>
+      <td *ngFor="let mydata of total_reading_time">{{mydata}}</td></tr> -->
+
+    </tbody>
+    <tbody class="col-2">
+
+
+      <!--search sort and pagination html-->
+      <th><strong>Final KVAH</strong></th>
+      <tr *ngFor="let mydata of final_index_kvah_d | paginate: {itemsPerPage:20,currentPage:p};">
+        <td>{{mydata}}</td>
+      </tr>
+      <!-- <tr>
+      <td *ngFor="let mydata of total_reading_time">{{mydata}}</td></tr> -->
+
+    </tbody>
+    <tbody class="col-2">
+
+
+      <!--search sort and pagination html-->
+      <th><strong>Initial KVAH</strong></th>
+      <tr *ngFor="let mydata of initial_index_kvah_d | paginate: {itemsPerPage:20,currentPage:p};">
+        <td>{{mydata}}</td>
+      </tr>
+      <!-- <tr>
+      <td *ngFor="let mydata of total_reading_time">{{mydata}}</td></tr> -->
+
+    </tbody>
+    <tbody class="col-2">
+
+
+      <!--search sort and pagination html-->
+      <th><strong>Total KVAH</strong></th>
+      <tr *ngFor="let mydata of total_kvah | paginate: {itemsPerPage:20,currentPage:p};">
+        <td>{{mydata}}</td>
+      </tr>
+      <!-- <tr>
+      <td *ngFor="let mydata of total_reading_time">{{mydata}}</td></tr> -->
+      
+      <div *ngIf="loader">
+        <img id="logo"  src="assets/8.gif" class="img-fluid" alt="" style="width: 50%;">  
+      </div> 
+    </tbody>
+    <br>
+    
+    <pagination-controls (pageChange)="p = $event" style="width:80%"></pagination-controls>
+  
+</div>
+

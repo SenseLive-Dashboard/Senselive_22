@@ -1,0 +1,138 @@
+nav{
+    background-color: mediumseagreen;
+}
+.nav-item, h5{
+    margin:auto 0px;
+    padding-right:5px;
+}
+
+.nav-link{
+color: white;
+}
+
+
+.companyName, heading{
+    margin-left: 50px;
+    text-align: right;
+    float: right;
+    position:absolute;
+}
+
+#am{
+    
+   float: right;
+  
+   position:static;
+   text-align: right;
+  height:41px;
+   background-color: mediumseagreen;
+   color: white;
+   font-weight:400;
+}
+
+#am2{
+    
+    float: left;
+   width:35px;
+   color: white;
+    /* position:static;
+    text-align: right;
+   height:41px;
+    background-color: mediumseagreen;
+    color: white;
+    font-weight:400; */
+ }
+ @media (max-width: 858px) {
+    .checkbtn {
+      display: block;
+    }
+    ul {
+      position: fixed;
+      width: 100%;
+      height: 75vh;
+      background: rgb(17, 28, 72);
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all 0.5s;
+      z-index: 1;
+    }
+    nav ul li {
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a {
+      font-size: 20px;
+    }
+    a:hover,
+    a.active {
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul {
+      left: 0;
+    }
+    label .logo {
+      font-size: 30px;
+    }
+    .content h1 {
+      font-size: 25px;
+    }
+    .content p {
+      font-size: 18px;
+    }
+  }
+
+  .buttonClass {
+    font-size:15px;
+    font-family:Arial;
+    width:140px;
+    height:50px;
+    border-width:1px;
+    color:#fff;
+    padding: 20px;
+    border-color:#18ab29;
+    font-weight:bold;
+    text-shadow: 1px 1px 0px #2f6627;
+    background:#44c767;
+  }
+  
+  .buttonClass:hover {
+    background: #5cbf2a
+  }
+
+  .buttonClass a:hover{
+    background: #5cbf2a;
+    transition: .5s;
+  }
+
+  @media (max-width: 450px) {   
+    .img-fluid{
+        top: -136px;
+        height: inherit;
+        width: 64px
+    }  
+    }
+
+
+
+  @media (max-width:509px){
+    .openbtn{
+      display: block;
+    }
+  }
+
+  @media (max-width:520px){
+    .displayclass{
+      display: none;
+    }
+  }
+
+  .displayclass{
+    background-color: #44c767;
+    height: 6vh;
+    width: 101%;
+    padding: 4px;
+    padding-left: 2rem;
+  }

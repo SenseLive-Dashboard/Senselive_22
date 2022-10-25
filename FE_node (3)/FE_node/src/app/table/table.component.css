@@ -1,0 +1,198 @@
+table{
+  
+  
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+ position: relative;
+ background-color: #90EE90;
+}
+
+th{
+  position: sticky;
+  top: 0px;
+  background-color: teal;
+  color: wheat;
+}
+
+
+#dropdown-basic{
+max-height: 250px;
+overflow-y: scroll;
+}
+
+#dropdown{
+ 
+  max-height: 175px;
+ 
+  overflow-y: scroll;
+  }
+
+  #dropdown button{
+    background-color:rgb(192, 231, 192);
+    color: black;
+    text-align: center;
+    width: 140px;
+  }
+
+label{
+  font-size: 13px
+}
+
+
+
+input[type=text]{
+  width: 10%;
+  position: absolute;
+  top: 30px !important;
+  z-index: 20 !important;
+  
+}
+select{
+  width: 50%;
+  position: absolute;
+  background-color: rgb(192, 231, 192);
+  top: 20px !important;
+  z-index: 20 !important;
+}
+.smeter{
+background-color: #f4f8f4;
+}
+.smeter2{
+padding: 8px;
+margin-left: -8px;
+background-color: #36a02f;
+color: #dddddd;
+font-size: 15px;
+border-width: 0px;
+cursor: pointer;
+}
+
+.smeter2:hover {
+opacity: 0.7;
+}
+
+
+#daterange{
+  width: 40% !important;
+  top: 80px !important;
+  left:200px;
+}
+
+td, th {
+  font-size: 12px;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  
+}
+
+
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+  
+}
+
+
+
+
+pagination-controls {
+
+ 
+  margin-left: 0;
+  margin-bottom: 1rem;
+  width:200%;
+  display: flex;
+  border: 1px solid rgb(30, 119, 59);
+}
+.btn .tooltiptext {
+visibility: hidden;
+width: 120px;
+background-color:black;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px 0;
+position: absolute;
+z-index: 1;
+top: 150%;
+left: 50%;
+margin-left: -60px;
+opacity:0.7;
+}
+
+.btn .tooltiptext::after {
+content: "";
+position: absolute;
+bottom: 100%;
+left: 50%;
+margin-left: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: transparent transparent black transparent;
+}
+
+.btn:hover .tooltiptext {
+visibility: visible;
+
+}
+
+#party{
+padding: 5px;
+margin-left: 194px;
+background-color: rgb(89, 174, 89);
+border-width: 0px;
+color: #fff;
+font-size: large;
+}
+#party2{
+padding: 5px;
+margin-left: 10px;
+background-color: rgb(89, 174, 89);
+border-width: 0px;
+color: #fff;
+font-size: large;
+}
+
+#logo{
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 200px;
+margin-bottom: 200px;
+}
+
+@media screen and (max-width:768px){
+ 
+  table{
+  
+  
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+   position: relative;
+   background-color: blueviolet;
+   overflow: scroll;
+  }
+ 
+ 
+  .table-container{
+    position: relative;
+    overflow-x: scroll;
+    width: 21.25rem;
+  }
+
+  #logo{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 9.375rem;
+    margin-bottom: 9.375rem;
+    }
+
+    #daterange{
+      width: 40% !important;
+      top: 5rem !important;
+      left:12.5rem;
+    }
+}
+

@@ -1,0 +1,29 @@
+<accordion class="panels" [isAnimated]="true">
+    <accordion-group *ngFor="let mydata of data" heading="Power Factor" [panelClass]="customClass">
+        <div class="btn">{{"Average - "+mydata.Power_Factor}}</div>
+    </accordion-group>
+    <accordion-group *ngFor="let mydata of data" heading="Current" [panelClass]="customClass">
+        <div class="btn">{{"Average - "+mydata.Current_Avg}}</div>
+        <div class="btn">{{"Phase 1 - "+mydata.Current_A}}</div>
+        <div class="btn">{{"Phase 2 - "+mydata.Current_B}}</div>
+        <div class="btn">{{"Phase 3 - "+mydata.Current_C}}</div>
+    </accordion-group>
+    <accordion-group *ngFor="let mydata of data" heading="Voltage" [panelClass]="customClass">
+        <div class="btn">{{"Average - "+mydata.Voltage_Avg}}</div>
+        <div class="btn">{{"Phase 1 - "+mydata.Voltage_AN}}</div>
+        <div class="btn">{{"Phase 2 - "+mydata.Voltage_BN}}</div>
+        <div class="btn">{{"Phase 3 - "+mydata.Voltage_CN}}</div>
+    </accordion-group>
+    <accordion-group *ngFor="let mydata of data" heading="Active Power" [panelClass]="customClass">
+        <div class="btn">{{"Average - "+mydata.Active_Power}}</div>
+    </accordion-group>
+    <accordion-group *ngFor="let mydata of data" heading="Reactive Power" [panelClass]="customClass">
+        <div class="btn">{{"Average - "+mydata.Reactive_Power}}</div>
+    </accordion-group>
+    <accordion-group *ngFor="let mydata of data" heading="Apparent Power" [panelClass]="customClass">
+        <div class="btn">{{"Average - "+mydata.Apparent_Power}}</div>
+    </accordion-group>
+    <accordion-group *ngFor="let mydata of data" heading="Frequency" [panelClass]="customClass">
+        <div class="btn">{{"Average - "+mydata.Frequency}}</div>
+    </accordion-group>
+</accordion>

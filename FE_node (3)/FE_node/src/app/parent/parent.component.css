@@ -1,0 +1,151 @@
+.col-sm-2{
+    height: 90vh;
+    background-color: mintcream;
+    border:1px solid black;
+    text-align: center;
+    overflow-y:scroll;
+}
+.col-sm-8{
+    height: 90vh;
+    background-color: mintcream;
+    border:1px solid black;
+    text-align: center;
+   overflow-y:scroll ;
+}
+.col-sm-3{
+    height: 85vh;
+    background-color: mintcream;
+    border:1px solid black;
+    text-align: center;
+    overflow-y:scroll;
+}
+
+.sidepanel  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 550px;
+   
+    background-color: rgb(246, 244, 244);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+  }
+  #mynav{
+    margin-top: -14px;
+      margin-left: 40px;
+  }
+  
+  .sidepanel a {
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidepanel a:hover {
+    color: white;
+  }
+  
+  .sidepanel .closebtn {
+    position: relative;
+    top: 0;
+    right: 25px;
+    text-align: right;
+    font-size: 30px;
+  }
+  
+  .openbtn {
+    transition: all 0.3s;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    font-size: 20px;
+    cursor: pointer;
+    background-color:limegreen;
+    color: white;
+    border: none;
+        margin-top: 5px;
+    margin-left: 10px
+  }
+  
+  .openbtn:hover {
+    background-color:rgb(33, 100, 23);
+  }
+
+  .buttonClass {
+    font-size:15px;
+    font-family:Arial;
+    width:140px;
+    height:50px;
+    border-width:1px;
+    color:#fff;
+    padding: 20px;
+    border-color:#18ab29;
+    font-weight:bold;
+    text-shadow: 1px 1px 0px #2f6627;
+    background:#44c767;
+  }
+  .buttonClass:hover {
+    background: #5cbf2a
+  }
+
+  .buttonClass a:hover{
+    background: #5cbf2a;
+    transition: .5s;
+  }
+
+  @media (max-width: 450px) {   
+    .img-fluid{
+        top: -136px;
+        height: inherit;
+        width: 64px;
+        
+    }  
+    }
+
+
+
+  @media (max-width:509px){
+    .openbtn{
+      display: block;
+    }
+  }
+
+  @media (min-width:530px){
+    .displayclass{
+      display: none
+      ;
+    }
+  }
+
+  .buttonClass{
+    border-radius: 16px;
+      margin-bottom: 7px;
+  }
+  .accordion{
+    border-radius: 16px;
+      margin-bottom: 7px;
+  }
+
+  .accordion {
+    font-size:15px;
+    font-family:Arial;
+    width:140px;
+    height:50px;
+    border-width:1px;
+    color:#fff;
+    padding: 20px;
+    border-color:#18ab29;
+    font-weight:bold;
+    text-shadow: 1px 1px 0px #2f6627;
+    background:#44c767;
+  }
+.sidepanel{
+  width: 215px;
+  height: 737px;
+  background-color: palegreen;
+}
+.displayClass{
+  color: white;
+  
+}

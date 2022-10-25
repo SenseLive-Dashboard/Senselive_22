@@ -1,0 +1,64 @@
+.chart{
+  width: 120%;
+  padding: 10px;
+  margin-top: 31px;
+  margin-left: 13px;
+  background-color: white;
+  transform: translate(300, 300);
+  height: 300px;
+  border: thick double #36904b;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#data{
+  color: #566962;
+  float:right;
+  margin-right: 19px;
+  margin-bottom: -19px;
+  
+}
+@media only screen and (max-width: 600px) {
+  .chart {
+      width: 90%;
+  }
+}
+
+.bb{
+  background: white;
+  /* margin-top: 6rem; */
+  margin-left: 1rem;
+  height: 115%;
+  border: 3px solid #4e9d61;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+@media only screen and (max-width: 450px) {
+  .bb{
+      background: white;
+      margin-left: .8rem;
+      height: 28rem;
+      border: 3px solid #4e9d61;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      width: 24.5rem;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .bb{       
+      width: 22.5rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .bb{
+      margin-left: .5rem;
+      width: 19rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .bb{
+      margin-left: .5rem;
+      width: 20rem;
+  }
+}

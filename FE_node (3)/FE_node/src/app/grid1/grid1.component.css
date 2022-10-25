@@ -1,0 +1,87 @@
+#am{
+    padding: 10px;
+    margin: 10px auto;
+    width:100px;
+    background-color: darkolivegreen;
+    color: white;
+    
+}
+#dropdownBasic1{
+    padding: 10px;
+    margin: 10px auto;
+    width:100px;
+    background-color: darkolivegreen;
+    color: white;
+    
+    
+}
+.error{
+    color: #f44336;
+    font-size: 14px;
+  }
+
+.button{
+    margin:5px auto;
+    padding: 10px;
+    height: 8%;
+    width: 70%;
+    border-radius: 25px;
+    background-color: limegreen;
+    color: white;
+    justify-content: center;
+    border: none;
+    
+}
+.btn1{
+    margin:5px auto;
+    padding: 0px;
+    height: 6%;
+    width: 50%;
+    border-radius: 25px;
+    background-color: limegreen;
+    color: white;
+    justify-content: center;
+    border: none;
+    
+    
+}
+.btn1:hover{ 
+    background-color: rgb(27 142 42);
+    cursor: pointer;
+} 
+.btn1:active {
+    transform: translateY(1px);
+}
+.btn1:focus{
+    background-color: rgb(27 142 42); 
+}
+.button:hover{ 
+    background-color: rgb(27 142 42);
+    cursor: pointer;
+} 
+.button:active {
+    transform: translateY(1px);
+}
+.button:focus{
+    background-color: rgb(27 142 42); 
+}
+fa-icon{
+    cursor: pointer;
+    
+
+}
+/* @media (min-width: 10px) {
+    .modal-body {
+        width: 2000px;
+        margin: 30px auto;
+    }
+    
+  } */
+btn-outline-primary:hover{
+    background-color: greenyellow;
+}
+
+.card{
+   margin-top: 170px;
+   
+}

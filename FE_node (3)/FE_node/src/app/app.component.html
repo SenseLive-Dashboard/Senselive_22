@@ -1,0 +1,7 @@
+<div class="head" *ngIf="isShown" class="row container-fluid" id="divshow">
+  <a [routerLink]="['register']" routerLinkActive="active">Register</a>
+  <a *ngIf="loginbtn" [routerLink]="['login']" routerLinkActive="active">Login</a>
+</div>
+
+
+<router-outlet></router-outlet>

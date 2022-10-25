@@ -1,0 +1,19 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.analytics{
+  display: flex;
+  margin: 50px;
+  width: 750px;
+}
+.analytics1{
+  display: flex;
+  margin: 50px;
+  width: 750px;
+}
+
+.abc{
+  display: flex;
+}
+

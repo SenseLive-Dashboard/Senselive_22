@@ -1,0 +1,62 @@
+
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+
+    <button class="openbtn" style="z-index: 5;" (click)="openNav()">☰</button>
+    <!-- <div *ngIf="open" id="mySidepanel" class="sidepanel" style="width:0px"> -->
+    <div *ngIf="open" id="mySidepanel" class="sidepanel" style="width:215px">
+      <div id="mynav">
+      <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+      
+      <div class="displayclass">
+        <a href="/overview1" class="buttonClass">Overview</a>
+        <a href="/data1" class="buttonClass">Data</a>
+        <!--a href="/report" class="buttonClass">Report</a>-->
+        <a href="/analysis" class="buttonClass">Analytics</a>
+      </div>
+
+
+
+      <app-grid1></app-grid1>
+    </div>
+    </div>
+    <div style="padding-left: 0;" class="col-sm-12" id="mySidebar">
+      
+      <app-grid2></app-grid2>
+    </div>
+
+     
+  </div>
+
+
+
+<div [style.display]="showModal1 ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">meter registration required</h4>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-dark" data-dismiss="modal" (click) = "hide1()">OK</button>    
+    </div>
+      
+    </div>
+    </div>
+</div>
+<div [style.display]="showModal2 ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">select a meter</h4>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-dark" data-dismiss="modal" (click) = "hide2()">OK</button>    
+    </div>
+      
+    </div>
+    </div>
+</div>
+</div>

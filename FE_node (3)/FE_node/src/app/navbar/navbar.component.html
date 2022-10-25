@@ -1,0 +1,182 @@
+
+<nav class="navbar sticky-top navbar-expand-sm navbar-light justify-content-between">
+ 
+
+  <div class="box1 c1 c6 c7"><a href="/overview1">
+  <img id="logo" class="navbar-brand" src="assets/senselive.png" class="img-fluid" alt="">
+</a>
+</div>
+
+
+  <!-- (click)="onNavigate()" -->
+
+  <div class="box2 mt-2 d-flex mr-3 c3 c4">
+
+     <div class="card2 mx-2 d-flex c3 justify-content-center" style="text-shadow: 0 0 3px #209b51;">
+      <h6 class="card-title my-0 change" style="font-size: larger;">Time - </h6>  <!-- RxJS Clock: -->
+      <h6 class="change"style="font-size: larger ;">{{ rxTime | date: 'hh:mm:ss a' }}</h6>
+  
+    </div> 
+    <div class="card2 mx-4 px-2 d-flex justify-content-center c4 display-none">
+      <h6 class="card-title my-0">Updated At :</h6>
+          <h6 *ngFor="let mydata of data1">{{mydata.reading_time}}</h6>
+    </div>
+  </div>
+  
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+
+  <label for="openSidebarMenu" class="sidebarIconToggle clcl">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"  ></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+
+  <div id="sidebarMenu">
+
+    <div class="card">
+
+      <label class="hoverable" for="fileInput">
+        <img class="rounded-circle mx-auto d-block" [src]="url ? url :'assets/demo.png'" alt="John" width="80px"
+          height="80px" style="margin-top:10px;border:1px solid black">
+        <div class="hover-text">Choose Photo</div>
+        <div class="background"></div>
+      </label>
+
+      <input id="fileInput" type='file' (change)="onSelectFile($event)">
+      <button type="button" id="profbtn" *ngIf="url" (click)="deleteprofile()">Remove</button>
+
+      <div class="card-body">
+
+        <h4 style="text-align: center;">{{value}}</h4>
+
+        <!-- <h5 style="text-align: center;">Pvt. Ltd.</h5> -->
+        <ul class="sidebarMenuInner">
+
+          <li class="list-group-item">
+            <h6 (click)="profileDetails()" data-toggle="modal" data-target="#exampleModalInfo">Profile</h6>
+          </li>
+
+          <li class="list-group-item">
+            <h6>Employee Details</h6>
+          </li>
+
+          <li class="list-group-item">
+            <h6 (click)="show()">Meter Details</h6>
+          </li>
+
+          <li class="list-group-item">
+            <h6 *ngIf="logoutbtn" (click)="logout()">Logout</h6>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+  
+</nav>
+
+
+<div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">METER DETAILS</h4>
+      </div>
+
+      <div class="modal-body">
+
+        <form [formGroup]="meterDetailsform" (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <select class="form-select form-select-lg mb-3 col-sm-5" name="meterDet" (change)="getmeterId($event)">
+              <option selected>Select Meter</option>
+              <option *ngFor="let mymeter of meter" [value]="mymeter.id">{{mymeter.meterName}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Meter Name:</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="meterName" class="form-control" value={{name}} />
+                <div class="error" *ngIf="meterDetailsform.controls['meterName'].hasError('required')
+                     && meterDetailsform.controls['meterName'].touched">Meter Name is required</div>
+                     
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Meter Id :</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" value={{metid}} [readonly]="variable" />
+                <input type="hidden" formControlName="meterid" class="form-control" value={{metid}} />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Company :</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" value={{comp}} [readonly]="variable" />
+                <input type="hidden" formControlName="company" class="form-control" value={{comp}} />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label">Location :</label>
+              <div class="col-sm-9">
+                <input type="text" formControlName="location" class="form-control" value={{locate}} />
+                <div class="error" *ngIf="meterDetailsform.controls['location'].hasError('required')
+                     && meterDetailsform.controls['location'].touched">Location is required</div>
+                     
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" >Update</button>&nbsp;
+          <button type="button" class="btn btn-danger" (click)="deleteMeter()" >Delete</button>&nbsp;
+          <button type="button" class="btn btn-dark" data-dismiss="modal" (click)="hide()">Cancel</button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Profile Details -->
+<div class="modal fade" id="exampleModalInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Profile Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div>
+        <p>&nbsp; Company Name : {{value}}</p>
+        <p>&nbsp; Company Admin Name : {{Name}}</p>
+        <p>&nbsp; Designation : {{Designation}}</p>
+        <p>&nbsp; Company Email Id : {{Email}}</p>
+        <p>&nbsp; Contact Number : {{MobileNo}}</p>
+        <p>&nbsp; Address : {{Address}}</p>
+        <!-- <p>&nbsp; ColdStorage Monitoring Service : {{ColdStorage}}</p>
+        <p>&nbsp; Energy Monitoring Service : {{Energy}}</p> -->
+      </div>
+    </div>
+  </div>
+</div>
+

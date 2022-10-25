@@ -1,0 +1,79 @@
+<!-- <nav class="sticky-top">
+    <ul class="nav nav-tabs">
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+                [routerLink]="['overview']">Overview</a></li>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" [routerLink]="['data']" (click)="logclick()">Data</a></li>
+        <li class="nav-item ml-auto">
+            <h5>{{value}}</h5>
+        </li>
+    </ul>
+</nav> -->
+<a type="button" class="btn" id="am" >{{value}}</a>
+
+<!--<div class="cont2" id="am2">a</div>-->
+
+<!--<div  *ngIf="data==='Elkem'" class="cont">
+   <tabset >
+    <tab heading="Overview" id="tab1"><app-overview></app-overview>
+      </tab>
+    <tab heading="Data"><app-table></app-table></tab>
+    <tab heading="Report"><app-reportcomponent></app-reportcomponent></tab>
+    <tab heading="Analytics"><app-graphs></app-graphs></tab>
+    <!-- <tab heading="Graph"><app-bar></app-bar></tab>
+    <!-- <tab heading="Report"><app-reportcomponent></app-reportcomponent></tab> 
+    <!-- <tab class="companyName" heading="{{value}}" [disabled]="disabled">Basic content 2</tab> 
+   
+   </tabset>  -->
+   <div class="displayclass">
+    <a href="/overview1" class="buttonClass">Overview</a>
+        <a href="/data1" class="buttonClass">Data</a>
+        <!--a href="/report" class="buttonClass">Report</a>-->
+        <a href="/analysis" class="buttonClass">Analytics</a>
+</div>
+<div *ngIf="data!=='Elkem'" class="cont">
+  
+    
+
+
+    </div>
+
+<!-- <div class="cont">
+   <tabset >
+    <tab heading="Overview" id="tab1"><app-overview></app-overview>
+      </tab>
+    <tab heading="Data"><app-table></app-table></tab>
+    <tab heading="Report"><app-reportcomponent></app-reportcomponent></tab>
+   
+   
+   </tabset> 
+</div> -->
+
+
+<div [style.display]="showModal1 ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Meter Registration Required</h4>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-dark" data-dismiss="modal" (click) = "hide1()">OK</button>    
+    </div>
+      
+    </div>
+    </div>
+</div>
+<div [style.display]="showModal2 ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Select a Device_Id</h4>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-dark" data-dismiss="modal" (click) = "hide2()">OK</button>    
+    </div>
+      
+    </div>
+    </div>
+</div>

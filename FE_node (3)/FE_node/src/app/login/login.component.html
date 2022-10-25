@@ -1,0 +1,77 @@
+<!-- <div class="container mt-5">
+    <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+
+        
+        <div *ngIf="errormsgshow">
+            <p class="text-danger">{{errormsg}}</p>
+        </div>
+
+
+        <div class="mb-3">
+            <input type="email" class="form-control" formControlName="email" placeholder="Enter your Email">
+        </div>
+        <div class="mb-3">
+            <input type="password" class="form-control" formControlName="password" placeholder="Enter your Password">
+        </div>
+        <div class="d-flex flex-column bd-highlight">
+            <button type="submit" name="login" class="btn btn-outline-warning">Login</button>
+        </div>
+        <div class="form-text d-flex justify-content-center">Don't have an account? <a href="/">SignUp</a></div>
+        <hr>
+    </form>
+
+    <form action="/forgot_password_step_1" method="get">
+        <div class="form-text d-flex justify-content-center">
+          <a href="/forgot_password_step_1">Forgot Password?</a>
+        </div>
+      </form>
+</div> -->
+<div class="row">
+  <div class=" imgl">
+    <img id="logo" src="assets/senselive.png" class="img-fluid" alt="">
+   
+  <div class="form-container">
+  
+    <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+      <!-- Show error message -->
+      <div *ngIf="errormsgshow">
+        <p class="text-danger">{{errormsg}}</p>
+      </div>
+      <h2 class="text" ><b>Company Login</b></h2>
+      <div class="mb-3">
+        <input type="email" class="form-control" formControlName="email" placeholder="Email" name="email">
+      </div>
+      <div class="mb-3">
+        <input [type]="fieldTextType ? 'text' : 'Password'" class="form-control" formControlName="password" placeholder="Password" name="password">
+        <i class="fa" [ngClass]="{
+          'fa-eye-slash': !fieldTextType,
+          'fa-eye': fieldTextType
+        }" (click)="toggleFieldTextType()"></i>
+      </div>
+  
+      <form action="/forgot_password_step_1" method="get">
+        <div class="join-link">
+          <a href="/forgotpasswordone">Forgot Password?</a>
+        </div>
+      </form>
+  
+      <div class="d-flex flex-column bd-highlight">
+  
+        <button type="submit" name="login" class="cancelbtn">Login</button>
+  
+      </div>
+      &nbsp;
+      <p class="join-link">Don't have an account? <a href="signupone">SignUp</a></p>
+      
+  
+    </form>
+  
+  
+    
+  </div>
+  
+  
+  </div>
+  </div>
+  
+  

@@ -1,0 +1,87 @@
+
+  <div class=" imgr">
+<div  id="form" class=" container  border border-2 my-5 p-4 shadow p-3 mb-5 bg-body rounded" style="background-color: rgb(152, 184, 185); width: 30%;">
+ <h4 style="text-align: center;">Registration</h4>
+    <form [formGroup]="signupForm" (ngSubmit)="signupSubmit()">
+
+        <!-- Show error message -->
+        <div *ngIf="errormsgshow">
+            <p class="text-danger">{{errormsg}}</p>
+        </div>
+
+        <!-- <div class="mb-3">
+          <input type="text" class="form-control" formControlName="name" placeholder="Enter your name">
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control"  [ngModel]="getEmail"  [value]="getEmail"  formControlName="email" placeholder="Enter your Email">
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" formControlName="password" placeholder="Enter your Password">
+        </div> -->
+
+
+        <div class="mb-3">
+            <input type="text" class="form-control" formControlName="company_name" placeholder="Enter your Comapny Name">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" formControlName="name" placeholder="Enter your Name">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" formControlName="designation" placeholder="Enter your Designation">
+        </div>
+        <div class="mb-3">
+            <input type="email"  class="form-control" formControlName="email"  [ngModel]="getEmail"  [value]="getEmail"  placeholder="Enter your Email">
+        </div>
+        <div class="mb-3">
+            <input type="number" class="form-control" formControlName="mobile_no" placeholder="Enter your Mobile number">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" formControlName="address" placeholder="Enter your Address">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" formControlName="coldstorage" placeholder="Coldstorage">
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" formControlName="energy" placeholder="Energy">
+        </div>
+        <div class="mb-3">
+            <input type="password" class="form-control" formControlName="password" placeholder="Enter your Password">
+        </div>
+
+
+<!-- Ek minute -->
+
+
+        <!-- <div class="mb-3">
+          <input type="text" class="form-control" formControlName="company_name" placeholder="Enter Comapany Name">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" formControlName="comapany_admin_name" placeholder="Enter Comapny Admin Name">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" formControlName="admin_mail_id" placeholder="Enter Admin Mail Id">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" formControlName="admin_phone_number" placeholder="Enter Admin Phone Number">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" formControlName="company_addr" placeholder="Enter Company Address">
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" formControlName="password" placeholder="Enter Password">
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" formControlName="name" placeholder="Confirm Password">
+        </div> -->
+        
+        
+        
+        <div class="d-flex flex-column bd-highlight">
+          <button type="submit" name="login" class="button">SignUp</button>
+        </div>
+      </form>
+</div>
+</div>
+
+
+

@@ -1,0 +1,103 @@
+
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d">
+      <!-- <button class="btn" id="dropdownBasic1" ngbDropdownToggle (click)="show()">Add</button> -->
+      <button class="btn" id="dropdownBasic1" (click)="show()">Add</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <!-- <button  ngbDropdownItem (click)="show()">Device</button> -->
+        <!-- <button ngbDropdownItem>Widget</button>
+        <button ngbDropdownItem>Trigger</button> -->
+      </div>
+    </div>
+     
+    
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Action - 1</button>
+        <button ngbDropdownItem>Another Action</button>
+        <button ngbDropdownItem>Something else is here</button>
+      </div>
+    </div>
+  </div> -->
+
+<!-- <a type="button" href="https://senselive.in/graph_1/linegraph.html" class="btn" id="am">Graphs</a> -->
+
+<hr>
+<div *ngFor="let mydata of meter">
+    <button style="text-align: center;" class="btn button" (click)="displaydataMeter(mydata.meterid)">{{mydata.meterName}}
+
+   <!-- <fa-icon [icon]="faTimes" (click)="deleteMeter(mydata.id)"></fa-icon> -->
+</button>
+</div><br>
+<br>
+
+
+<!-- Creates the bootstrap modal where the image will appear -->
+<div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="top: 60px">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">DEVICE REGISTRATION</h4>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="registerForm" novalidate (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label>Device Name</label>
+                        <input type="text" formControlName="meterName" class="form-control" required>
+
+                        <div class="error" *ngIf="registerForm.controls['meterName'].hasError('required')
+                     && registerForm.controls['meterName'].touched">Meter Name is required</div>
+
+                        <div class="error" *ngIf="registerForm.controls['meterName'].hasError('uniqueMetername')">Meter Name Already Exists</div>
+
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label>Device Id</label>
+                        <input type="text" formControlName="meterid" class="form-control" required>
+
+                        <div class="error" *ngIf="registerForm.controls['meterid'].hasError('required')
+                     && registerForm.controls['meterid'].touched">Meter Id is required</div>
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input type="hidden" formControlName="company" class="form-control" value={{value}} />
+                        <input type="text" class="form-control" value={{value}} [readonly]="true" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input type="text" formControlName="location" class="form-control" required>
+                        <div class="error" *ngIf="registerForm.controls['location'].hasError('required')
+                     && registerForm.controls['location'].touched">Location is required</div>
+
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add</button>&nbsp;
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" (click)="hide()">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<br>
+
+

@@ -1,0 +1,819 @@
+<app-parent></app-parent>
+<app-dialogbox></app-dialogbox>
+
+<!-- 
+<div class="row myrow">
+  <div class="col-sm-12">
+    <div class="row myrow">
+
+
+
+      <div class="col-sm-3" style=" margin-left: auto;">
+        <div class="card" style="height:70px;">
+          <h6 class="card-title"><strong>Last Updated At:</strong></h6>
+          <div class="card-body">
+            <div *ngFor="let mydata of data">
+              <h6 style="margin-top: -15px;text-align: center;">{{mydata.reading_time}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <hr class="myhr"> -->
+
+<div style="margin-inline: 10px;" class="row myrow" id="sortable" cdkDropListGroup>
+
+  
+  <div class="cont1 inlineblock" ><br>
+    <div class="card">
+      <div class="card-block">
+        <h6 class="card-title"><strong>KWH</strong></h6>
+        <hr>
+        <div class="cont"><br>
+          <h6 style="margin-left: 35px;" id="btnPrevious">Total</h6>
+          <h6 *ngFor="let mydata of data" id="spanStage">{{mydata.KWh_D| number:'0.1-5'}}</h6><br>
+
+          <h6 id="btnPrevious">D</h6>
+          <h6 *ngFor="let mysort of sort1" id="spanStage">{{mysort.KWh_D| number:'0.1-5'}}</h6><br>
+
+          <h6 id="btnPrevious">W</h6>
+          <h6 *ngFor="let mysort of sort2" id="spanStage">{{mysort.KWh_D| number:'0.1-5'}}</h6><br>
+
+          <h6 id="btnPrevious">M</h6>
+          <h6 *ngFor="let mysort of sort3" id="spanStage">{{mysort.KWh_D| number:'0.1-5'}}</h6><br>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <div class="cont1 inlineblock" ><br>
+    <div class="card">
+      <div>
+        <h6 class="card-title"><strong>KVAH</strong></h6>
+        <hr>
+        <div class="cont"><br>
+          <h6 style="margin-left: 35px;" id="btnPrevious">Total</h6>
+          <h6 *ngFor="let mydata of data" id="spanStage">{{mydata.KVAh_D| number:'0.1-5'}}</h6><br>
+
+          <h6 id="btnPrevious">D</h6>
+          <h6 *ngFor="let mysort of sort14" id="spanStage">{{mysort.KVAh_D| number:'0.1-5'}}</h6><br>
+
+          <h6 id="btnPrevious">W</h6>
+          <h6 *ngFor="let mysort of sort5" id="spanStage">{{mysort.KVAh_D| number:'0.1-5'}}</h6><br>
+
+          <h6 id="btnPrevious">M</h6>
+          <h6 *ngFor="let mysort of sort6" id="spanStage">{{mysort.KVAh_D| number:'0.1-5'}}</h6><br>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+
+<!-- <div class="cont1" ><br>
+    <div class="card">
+      <div>
+        <h6 class="card-title"><strong>KVARH (Lag)</strong></h6>
+        <hr>
+        <div class="cont"><br>
+          <h6 style="margin-left: 35px;" id="btnPrevious">Total</h6>
+          <h6 *ngFor="let mydata of data" id="spanStage">{{mydata.KVARh_D| number:'0.1-5'}}</h6><br>
+
+          <h6 id="btnPrevious">D</h6>
+          <h6 *ngFor="let mysort of sort7" id="spanStage">{{mysort.KVARh_D| number:'0.1-5'}}</h6><br>
+
+          <h6 id="btnPrevious">W</h6>
+          <h6 *ngFor="let mysort of sort8" id="spanStage">{{mysort.KVARh_D| number:'0.1-5'}}</h6><br>
+
+          <h6 id="btnPrevious">M</h6>
+          <h6 *ngFor="let mysort of sort9" id="spanStage">{{mysort.KVARh_D| number:'0.1-5'}}</h6><br>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+<!-- <div class="cont1"><br>
+    <div class="card">
+      <div>
+        <h6 class="card-title"><strong>KVARH (Lead)</strong></h6>
+        <hr>
+        <div class="cont"><br>
+          <h6 style="margin-left: 35px;" id="btnPrevious">Total</h6>
+          <h6 *ngFor="let mydata of data" id="spanStage">{{mydata.KVARh_R| number:'0.1-5'}}</h6><br>
+
+          <h6 id="btnPrevious">D</h6>
+          <h6 *ngFor="let mysort of sort10" id="spanStage">{{mysort.KVARh_R| number:'0.1-5'}}</h6><br>
+
+          <h6 id="btnPrevious">W</h6>
+          <h6 *ngFor="let mysort of sort11" id="spanStage">{{mysort.KVARh_R| number:'0.1-5'}}</h6><br>
+
+          <h6 id="btnPrevious">M</h6>
+          <h6 *ngFor="let mysort of sort12" id="spanStage">{{mysort.KVARh_R| number:'0.1-5'}}</h6><br>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-sm-2"><br>
+    <div class="card">
+      <div>
+        <h6 class="card-title">KVARH (Lead)</h6>
+        <hr><br>
+        <h6 *ngFor="let mydata of data">Total  {{mydata.KVARh_R}} </h6>
+        <h6 *ngFor="let mydata of sort10">D {{mydata.KVARh_R| number:'0.1-5'}}</h6>
+        <h6 *ngFor="let mydata of sort11">W {{mydata.KVARh_R| number:'0.1-5'}}</h6>
+        <h6 *ngFor="let mydata of sort12">M {{mydata.KVARh_R| number:'0.1-5'}}</h6>
+
+
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-sm-2"><br>
+    <div class="card">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Current_phase1()" data-toggle="modal" data-target="#exampleModal6">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title"><strong>Current</strong></h6>
+        <hr>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.Aavg}}</h3>
+
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-sm-2"><br>
+    <div class="card">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Current_phase2()" data-toggle="modal" data-target="#exampleModal7">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title"><strong>Avg_Volt_LL</strong></h6>
+        <hr>
+
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.V_LL}}</h3>
+
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <h6 class="card-title">Sanctioned Load</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>160</h3>
+          <h4>KW</h4>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <h6 class="card-title">Connected Load</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>136</h3>
+          <h4>KW</h4>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <h6 class="card-title">Contract Demand</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>200</h3>
+          <h4>KVA</h4>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <h6 class="card-title">60% of Contract Demand</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>120</h3>
+          <h4>KVA</h4>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Voltage_avg()" data-toggle="modal" data-target="#exampleModal1">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title">KWh</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KWh_D}}</h3>
+          <h4>Volt</h4>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="col-sm-3"> -->
+  <!-- <div class="card">
+      <div> -->
+  <!-- <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Voltage_avg()" data-toggle="modal" data-target="#exampleModal1">
+          <i class="far fa-chart-line"></i>
+        </fa-icon> -->
+  <!-- <h6 class="card-title">KWh_DpR</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KWh_DpR}}</h3> -->
+  <!-- <h4>Volt</h4> -->
+  <!-- </div>
+      </div>
+    </div> -->
+  <!-- </div> -->
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div> -->
+  <!-- <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Voltage_avg()" data-toggle="modal" data-target="#exampleModal1">
+          <i class="far fa-chart-line"></i>
+        </fa-icon> -->
+  <!-- <h6 class="card-title">KWh_DnR</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KWh_DnR}}</h3> -->
+  <!-- <h4>Volt</h4> -->
+  <!-- </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Voltage_avg()" data-toggle="modal" data-target="#exampleModal1">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title">KVARh_Lag</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KVARh_D}}</h3>
+          <h4>Volt</h4>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Voltage_avg()" data-toggle="modal" data-target="#exampleModal1">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title">KVARh_Lead</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KVARh_R}}</h3>
+          <h4>Volt</h4>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div> -->
+  <!-- <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Voltage_avg()" data-toggle="modal" data-target="#exampleModal1">
+          <i class="far fa-chart-line"></i>
+        </fa-icon> -->
+  <!-- <h6 class="card-title">KVARh_DpR</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KVARh_DpR}}</h3> -->
+  <!-- <h4>Volt</h4> -->
+  <!-- </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div> -->
+  <!-- <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Voltage_phase1()" data-toggle="modal" data-target="#exampleModal2">
+          <i class="far fa-chart-line"></i>
+        </fa-icon> -->
+  <!-- <h6 class="card-title">KVARh_DnR</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KVARh_DnR}}</h3> -->
+  <!-- <h4>Volt</h4> -->
+  <!-- </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Voltage_phase2()" data-toggle="modal" data-target="#exampleModal3">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title">KVAh</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KVAh_D}}</h3>
+          
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div> -->
+  <!-- <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Voltage_phase3()" data-toggle="modal" data-target="#exampleModal4">
+          <i class="far fa-chart-line"></i>
+        </fa-icon> -->
+  <!-- <h6 class="card-title">KVAh_DpR</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KVAh_DpR}}</h3> -->
+  <!-- <h4>Volt</h4> -->
+  <!-- </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div> -->
+  <!-- <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Current_avg()" data-toggle="modal" data-target="#exampleModal5">
+          <i class="far fa-chart-line"></i>
+        </fa-icon> -->
+  <!-- <h6 class="card-title">KVAh_DnR</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KVAh_DnR}}</h3> -->
+  <!-- <h4>Ampere</h4> -->
+  <!-- </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Current_phase1()" data-toggle="modal" data-target="#exampleModal6">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title">Ampere</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.Aavg}}</h3>
+          
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-sm-3"><br>
+    <div class="card">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Current_phase2()" data-toggle="modal" data-target="#exampleModal7">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title">Avg_Volt_LL</h6><hr>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.V_LL}}</h3>
+         
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- new add -->
+  <!-- <div class="col-sm-3"><br>
+    <div class="card">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Current_phase3()" data-toggle="modal" data-target="#exampleModal8">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title">Avg_Volt_LN</h6><hr>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.V_LN}}</h3>
+         
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <div class="col-sm-2"><br>
+    <div class="card">
+      <div>
+
+        <fa-icon class="icon" [icon]="faPlusCircle" (click)="graph_Activepower()" data-toggle="modal" data-target="#exampleModal9">
+ <i class="fas fa-cog"></i>
+        </fa-icon>
+        <i class="fas fa-cog" style=" float: right;
+        margin-right: 2px;
+        margin-top: -7px;
+        cursor: pointer;"  data-toggle="modal" data-target="#exampleModal9"></i>
+        <h6 class="card-title"><strong>KW</strong></h6><hr>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KW}}</h3>
+          
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Reactivepower()" data-toggle="modal" data-target="#exampleModal10">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title">KVAR</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KVAR}}</h3>
+         
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Apparentpower()" data-toggle="modal" data-target="#exampleModal11">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title">KVA</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br>
+          <h3>{{mydata.KVA}}</h3>
+          
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <div class="col-sm-2"><br>
+    <div class="card" style="height: 80px;">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Apparentpower()" data-toggle="modal" data-target="#exampleModal11">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title2" ><strong>PF</strong></h6>
+        
+        <div class="card-body" *ngFor="let mydata of data">
+          <h3 class="pf">{{mydata.PF}}</h3>
+          
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  
+
+
+ 
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <fa-icon class="icon" [icon]="faChartLine" (click)="graph_Voltage_avg()" data-toggle="modal" data-target="#exampleModal12">
+          <i class="far fa-chart-line"></i>
+        </fa-icon>
+        <h6 class="card-title">Trial</h6>
+        <div class="card-body" *ngFor="let mydata of data"><br> -->
+  <!-- <h3>{{mydata.KWh_D}}</h3> -->
+  <!-- <h4>Volt</h4> -->
+  <!-- </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <div class="col-sm-3">
+    <div class="card">
+      <div>
+        <div  class="card-body ml-7">
+          <fa-icon id="addCardIcon" class="icon" [icon]="faPlusCircle" (click)="show()"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>  -->
+
+  <!-- add complete -->
+  <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<app-line></app-line> -->
+<br>
+  <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<app-bar3></app-bar3>  -->
+  <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<app-bar5></app-bar5> -->
+  <br>
+  <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+ 
+  <div class="cont2 inlineblock"><br>
+    <div class="card aa" id="card_grid">
+      <div>
+        <div class="moved">
+          <!-- <h6 class="card-title1" style="text-align: start; margin-left: 10px; width: 80%;"><button
+              class="btn2" ><strong>{{vd2}}</strong></button></h6> -->
+          <h6 *ngIf="vd2" class="card-title1" style="text-align: start; margin-left: 10px; width: 80%;"><button
+              class="btn2" ><strong>{{vd2}}</strong></button></h6>
+          <h6 *ngIf="!vd2" class="card-title1" style="text-align: start; margin-left: 10px; width: 80%;"><button
+              class="btn2" style="color: limegreen;"><strong>Name</strong></button></h6>
+        </div>
+
+        <fa-icon id="addCardIcon" class="icon" [icon]="faPlusCircle" (click)="show()"></fa-icon>
+
+        <div class="btn-group" style=" float: right; margin-right: 22px;
+          margin-top: -37px;" dropdown>
+          <i dropdownToggle class="fas fa-cog" style="  cursor: pointer;"></i>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem"><a class="dropdown-item" style="cursor: pointer;" data-toggle="modal"
+                data-target="#exampleModal14">Edit</a></li>
+            <li role="menuitem">
+              <a style="cursor: pointer;" class="dropdown-item" data-toggle="modal"
+                data-target="#exampleModal966">Trigger</a>
+            </li>
+            <li role="menuitem">
+              <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+            </li>
+            <!-- <li class="divider dropdown-divider"></li>
+              <li role="menuitem">
+                <a class="dropdown-item" href="#">Separated link</a>
+              </li> -->
+          </ul>
+        </div>
+        <!-- <i class="fas fa-cog" style=" float: right;
+        margin-right: 22px;
+        margin-top: -37px;
+        cursor: pointer;" (click)="graph_Activepower()" data-toggle="modal" data-target="#exampleModal9"></i> -->
+        <!-- <i class="fas fa-edit" style=" float: right;
+        margin-right: 145px;
+        margin-top: -37px;
+        cursor: pointer;" (click)="graph_Activepower()" data-toggle="modal" data-target="#exampleModal14"></i> -->
+        <hr><br>
+        <div id="list" class="card-body2">
+          <div class="gg" >
+          
+            <!-- <h6 class="line">KVA: &nbsp; {{mydata.KVA}}</h6><br>
+            <h6 class="line">KW: &nbsp; {{mydata.KW}}</h6><br>
+            <h6 class="line">VLN: &nbsp; {{mydata.V_LN}}</h6><br>
+            <h6 class="line">VLL: &nbsp; {{mydata.V_LL}}</h6><br>
+            <h6 class="line">KVAR: {{mydata.KVAR}}</h6><br>
+            <h6 class="line">PF: &nbsp; &nbsp; {{mydata.PF}}</h6><br>
+            <h6 class="line">Amp: &nbsp; {{mydata.Aavg}}</h6> -->
+             
+            <div  class="ll">
+             <h6  id="btnPrevious">KVA    &nbsp; &nbsp;:</h6>
+             <h6  id="spanStage2" *ngFor="let mydata of data">&nbsp;{{mydata.KVA}}</h6><br>
+              
+              
+              
+              <h6 id="btnPrevious2">KW    &nbsp;&nbsp; &nbsp;&nbsp;:</h6>
+              <h6  id="spanStage2"*ngFor="let mydata of data">&nbsp;{{mydata.KW}}</h6><br>
+            
+              <h6 id="btnPrevious2">KVAR &nbsp;:</h6>
+              <h6  id="spanStage2"*ngFor="let mydata of data">&nbsp;{{mydata.KVAR}}</h6><br>
+
+              
+            
+            </div>
+            <div  class="ll">
+            
+              <h6 id="btnPrevious2">VLL    &nbsp; &nbsp; &nbsp;:</h6>
+              <h6  id="spanStage2"*ngFor="let mydata of data">&nbsp;{{mydata.V_LL}}</h6><br>
+              
+    
+              <h6 id="btnPrevious2">VLN     &nbsp; &nbsp;&nbsp;:</h6>
+              <h6  id="spanStage2"*ngFor="let mydata of data">&nbsp;{{mydata.V_LN}}</h6><br>
+              
+              <h6 id="btnPrevious2">Amp   &nbsp; &nbsp;:</h6>
+              <h6  id="spanStage2"*ngFor="let mydata of data">&nbsp;{{mydata.Aavg}}</h6><br>
+
+              <h6 id="btnPrevious2">PF   &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;:</h6>
+              <h6  id="spanStage2"*ngFor="let mydata of data">&nbsp;{{mydata.PF}}</h6><br>
+
+            </div>
+
+            <!-- <h6>{{mydata.KVARh_D| number:'0.1-5'}} KVARH (Lag)</h6>
+            <h6>{{mydata.KVARh_R| number:'0.1-5'}} KVARH (Lead)</h6> -->
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="app-sort-bar za">
+    <app-sort-bar></app-sort-bar>
+    
+  </div> 
+
+  <div class="app-overview-line za p1">
+    <app-overview-line></app-overview-line>
+  </div>
+
+
+
+
+   <!-- <div id="circle"></div> -->
+   <div class="col-sm-2" *ngFor="let mydata of cardData"><br>
+    <div class="card" style="height: 150px;">
+      <div>
+        <h6 class="card-title"><strong>{{mydata.data_type}}</strong></h6>
+
+        <!-- <i class="fas fa-trash-alt" style=" float: right;  margin-right: 5px;
+      margin-top: -37px;
+      cursor: pointer;"  (click)="deleteCard(mydata.id)"></i> -->
+        <div class="btn-group" style=" float: right; margin-right: 8px;
+      margin-top: -30px;" dropdown>
+          <i dropdownToggle class="fas fa-cog" style="  cursor: pointer;"></i>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem"><a class="dropdown-item" style="cursor: pointer;"
+                (click)="deleteCard(mydata.id)">Delete</a></li>
+            <li role="menuitem">
+              <a style="cursor: pointer;" class="dropdown-item" data-toggle="modal"
+                >Trigger</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" >Something else here</a>
+            </li>
+
+            <!--  Important items for later work <a class="dropdown-item" href="#">Something else here</a> data-target="#exampleModal9">Trigger</a> -->
+
+            <!-- <li class="divider dropdown-divider"></li>
+          <li role="menuitem">
+            <a class="dropdown-item" href="#">Separated link</a>
+          </li> -->
+          </ul>
+        </div>
+
+        <hr>
+        <div class="card-body"><br>
+          <div *ngIf="mydata.data_type==='KW'">
+            <h4 *ngFor="let mydata of data">{{mydata.KW}}</h4>
+          </div>
+          <!-- <ng-template #Max1>
+          <ng-container *ngIf="mydata.data_type==='KVAh_D'"><h4 *ngFor="let mydata of data">{{mydata.KVAh_D}}</h4></ng-container>
+        </ng-template> -->
+          <div *ngIf="mydata.data_type==='KVAh_D'">
+            <h4 *ngFor="let mydata of data">{{mydata.KVAh_D}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='KWh_D'">
+            <h4 *ngFor="let mydata of data">{{mydata.KWh_D}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='KVAR'">
+            <h4 *ngFor="let mydata of data">{{mydata.KVAR}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='PF'">
+            <h4 *ngFor="let mydata of data">{{mydata.PF}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='KVA'">
+            <h4 *ngFor="let mydata of data">{{mydata.KVA}}</h4>
+          </div>
+          <!-- <div *ngIf="mydata.data_type==='KV'">
+            <h4 *ngFor="let mydata of data">{{mydata.KWh_D}}</h4>
+          </div> -->
+          <div *ngIf="mydata.data_type==='KVARh_D'">
+            <h4 *ngFor="let mydata of data">{{mydata.KVARh_D}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='KVARh_R'">
+            <h4 *ngFor="let mydata of data">{{mydata.KVARh_R}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='Volt_LL'">
+            <h4 *ngFor="let mydata of data">{{mydata.V_LL}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='Volt_LN'">
+            <h4 *ngFor="let mydata of data">{{mydata.V_LN}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='KWh_DpR'">
+            <h4 *ngFor="let mydata of data">{{mydata.KWh_DpR}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='KWh_DnR'">
+            <h4 *ngFor="let mydata of data">{{mydata.KWh_DnR}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='Ampere'">
+            <h4 *ngFor="let mydata of data">{{mydata.Aavg}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='KVARh_DnR'">
+            <h4 *ngFor="let mydata of data">{{mydata.KVARh_DnR}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='KVARh_DpR'">
+            <h4 *ngFor="let mydata of data">{{mydata.KVARh_DpR}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='KVAh_DnR'">
+            <h4 *ngFor="let mydata of data">{{mydata.KVAh_DnR}}</h4>
+          </div>
+          <div *ngIf="mydata.data_type==='KVAh_DpR'">
+            <h4 *ngFor="let mydata of data">{{mydata.KVAh_DpR}}</h4>
+          </div>
+
+          <!-- <h4 style="text-align: center;">{{mydata.unit}}</h4> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="myModalLabel">ADD PARAMETER CARD</h6>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="addCardForm" novalidate (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <div class="error" *ngIf="addCardForm.controls['data_type'].hasError('uniqueparaname')">Meter Name Already
+              Exists</div>
+            <select class="custom-select" id="parameters" name="parameters" formControlName="data_type"
+              [(ngModel)]="parameters">
+
+              <option value="" disabled>Select Parameter</option>
+              <option value="KWh_D">KWh_D</option>
+              <option value="KWh_DpR">KWh_DpR</option>
+              <option value="KWh_DnR">KWh_DnR</option>
+              <option value="KVARh_D">KVARh_D</option>
+              <option value="KVARh_R">KVARh_R</option>
+              <option value="KVARh_DpR">KVARh_DpR</option>
+              <option value="KVARh_DnR">KVARh_DnR</option>
+              <option value="KVAh_D">KVAh_D</option>
+              <option value="KVAh_DpR">KVAh_DpR</option>
+              <option value="KVAh_DnR">KVAh_DnR</option>
+              <option value="A">Ampere</option>
+              <option value="Volt_LL">Avg_Volt_LL</option>
+              <option value="Volt_LN">Avg_Volt_LN</option>
+              <option value="KW">KW</option>
+              <option value="KVAR">KVAR</option>
+              <option value="KVA">KVA</option>
+              <option value="PF">PF</option>
+
+
+            </select>
+
+          </div>
+
+          <div class="form-group">
+
+            <input type="text" formControlName="M_id" placeholder="Meter ID"  class="form-control" />
+            <div *ngIf="submitted && f.Max1.errors" class="invalid-feedback">
+              <div *ngIf="f.M_id.errors">Unit is required</div>
+
+            </div>
+          </div>
+          <div class="form-group">
+
+            <input type="number" formControlName="Max1" placeholder="Maximum" class="form-control" />
+            <div *ngIf="submitted && f.Max1.errors" class="invalid-feedback">
+              <div *ngIf="f.Max1.errors">Unit is required</div>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+
+            <input type="number" formControlName="Min1" placeholder="Minimum" class="form-control" />
+            <div *ngIf="submitted && f.Min1.errors" class="invalid-feedback">
+              <div *ngIf="f.Min1.errors">Unit is required</div>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+
+          <input type="text" formControlName="unit" placeholder="Enter Unit" class="form-control"
+                        /> 
+            <div *ngIf="submitted && f.unit.errors" class="invalid-feedback">
+              <div *ngIf="f.unit.errors">Unit is required</div>
+
+            </div>
+          </div>
+
+
+
+
+          <button style="width: 70px;" type="submit" class="btn btn-primary"
+            [disabled]="addCardForm.invalid">Add</button>&nbsp;
+          <button style="width: 70px; text-align: center; " type="button" class="btn btn-dark" data-dismiss="modal"
+            (click)="hide()">Cancel</button>
+
+        </form>
+
+
+      </div>
+
+
+    </div>
+  </div>
+</div>

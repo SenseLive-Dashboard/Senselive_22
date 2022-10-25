@@ -1,0 +1,223 @@
+<app-parent></app-parent>
+<div class="btn-group float-left" role="group" aria-label="Basic example">
+  <div class="btn-group float-left" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle"
+      aria-controls="dropdown-basic">
+      Filters <span class="caret"></span>
+    </button>
+    <ul id="dropdown" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+      <li role="menuitem"><button class="btn btn-secondary" (click)="live()">Live</button>
+      </li>
+      <li role="menuitem"><button class="btn btn-secondary" (click)="minute()">M
+          <span class="tooltiptext">1 minute</span>
+        </button>
+      </li>
+      <li role="menuitem"><button class="btn btn-secondary" (click)="hour()">H
+        <span class="tooltiptext">1 Hour</span>
+      </button>
+      </li >
+      <li role="menuitem"><button class="btn btn-secondary" (click)="day()">D
+        <span class="tooltiptext">1 Day</span>
+      </button>
+      </li>
+      <li role="menuitem"> <button class="btn btn-secondary" (click)="week()">W
+        <span class="tooltiptext">1 Week</span>
+      </button>
+      </li>
+      <li role="menuitem"><button class="btn btn-secondary" (click)="month()">Month
+        <span class="tooltiptext">1 Month</span>
+      </button>
+      </li>
+      <li role="menuitem"><button class="btn btn-secondary" (click)="datepicker=!datepicker">Custom
+        <span class="tooltiptext">DateRange</span>
+      </button>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle"
+      aria-controls="dropdown-basic">
+      Column Filter <span class="caret"></span>
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide1()" checked/> KWh</span>
+      </li>
+      
+      <!-- <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide2()" checked/> KWh_DpR</span>
+      </li>
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide3()" checked/> KWh_DnR</span>
+      </li> -->
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide4()" checked/> KVARh_Lag</span>
+      </li>
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide5()" checked/> KVARh_Lead</span>
+      </li >
+      <!-- <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide6()" checked/> KVARh_DpR</span>
+      </li>
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide7()" checked/> KVARh_DnR</span>
+      </li> -->
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide8()" checked/> KVAh</span>
+      </li>
+      <!-- <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide9()" checked/> KVAh_DpR</span>
+      </li>
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide11()" checked/> KVAh_DnR</span>
+      </li> -->
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide22()" checked/> Ampere</span>
+      </li>
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide33()" checked/> Avg_Volt_LL</span>
+      </li>
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide44()" checked/> Avg_Volt_LN</span>
+      </li>
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide55()" checked/> KW</span>
+      </li>
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide66()" checked/> KVAR</span>
+      </li>
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide77()" checked/> KVA</span>
+      </li>
+      <li role="menuitem"><span class="dropdown-item"><input type="checkbox" (click)="showhide88()" checked/> PF</span>
+      </li>
+    </ul>
+  </div>
+  <div class="smeter">
+    &nbsp;
+        <!-- <fa-icon [icon]="faFilter" (click)="show1=!show1"></fa-icon> -->
+        <button  class="smeter2" (click)="show1=!show1">Meter</button>
+        <select *ngIf="show1" class="form-select form-select-lg" name="meterDet" (change)="getmeterId($event)">
+          <option selected disabled>Select Meter</option>
+          <option *ngFor="let mymeter of meter" [value]="mymeter.meterid">{{mymeter.meterName}}</option>
+        </select>
+      </div>
+</div>
+
+<!-- <input *ngIf="datepicker" type="text" placeholder="SELECT DATE" class="form-control" id="daterange" 
+[bsConfig]="{rangeInputFormat : 'MM/DD/YYYY, h:mm:ss a', dateInputFormat: 'MM/DD/YYYY, h:mm:ss a'}"
+bsDaterangepicker (ngModelChange)="getByDate($event)" 
+[(ngModel)]="this.filters.reading_time"> -->
+
+
+  <!-- <label for="party">Enter a date and time for your party booking:</label> -->
+  <input *ngIf="datepicker" id="party" type="datetime-local" name="partydate"   (ngModelChange)="getByDate1($event)" 
+  [(ngModel)]="this.filters.reading_time">
+
+
+  <!-- <label for="party">Enter a date and time for your party booking:</label> -->
+  <input *ngIf="datepicker" id="party2" type="datetime-local" name="partydate2"   (ngModelChange)="getByDate2($event)" 
+  [(ngModel)]="this.filters2.reading_time">
+
+
+
+
+
+<!--button for download-->
+<button class="btn " (click)="exportexcel()">
+  <fa-icon [icon]="faDownload"></fa-icon>
+</button>
+<br>
+
+<div class="table-container">
+  <table class="table" id="excel-table">
+    <thead>
+      <th scope="col">Reading Time</th>
+      <th scope="col">Device Id </th>
+      <!-- <th scope="col">Device Name 
+        <fa-icon [icon]="faSort" (click)="sortVoltage_A('Voltage_AN')"></fa-icon>
+      </th> -->
+     
+      <!-- <th scope="col">Client
+        <fa-icon [icon]="faFilter" (click)="show1=!show1"></fa-icon>
+        <fa-icon [icon]="faSort" (click)="sortClient('Client')"></fa-icon>
+        <input *ngIf="show1" class="form-control" type="text" name="Client" [(ngModel)]="Client"
+          (ngModelChange)="Search1()" list="c1">
+        <datalist id="c1">
+          <option *ngFor="let mydata of data1" [value]="mydata.Client">
+
+        </datalist>
+      </th> -->
+     
+      <th *ngIf="!check1" scope="col">KWh &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortVoltage_A('KWh_D')"></fa-icon>
+      </th>
+      <!-- <th *ngIf="!check2" scope="col">KWh_DpR &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortVoltage_B('KWh_DpR')"></fa-icon>
+      </th>
+      <th *ngIf="!check3" scope="col">KWh_DnR &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortVoltage_C('KWh_DnR')"></fa-icon>
+      </th> -->
+      <th *ngIf="!check4" scope="col">KVARh_Lag &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortVoltage_Avg('KVARh_D')"></fa-icon>
+      </th>
+      <th *ngIf="!check5" scope="col">KVARh_Lead &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortFrequency('KVARh_R')"></fa-icon>
+      </th>
+      <!-- <th *ngIf="!check6" scope="col"> KVARh_DpR &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortCurrent_A('KVARh_DpR')"></fa-icon>
+      </th>
+      <th *ngIf="!check7" scope="col">KVARh_DnR &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortCurrent_B('KVARh_DnR')"></fa-icon>
+      </th> -->
+      <th *ngIf="!check8" scope="col"> KVAh &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortCurrent_C('KVAh_D')"></fa-icon>
+      </th>
+      <!-- <th *ngIf="!check9" scope="col">KVAh_DpR &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortCurrent_Avg('KVAh_DpR')"></fa-icon>
+      </th>
+      <th *ngIf="!check11" scope="col">KVAh_DnR &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortActivePower('KVAh_DnR')"></fa-icon>
+      </th> -->
+      <th *ngIf="!check22" scope="col">Ampere &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortReactivePower('Aavg')"></fa-icon>
+      </th>
+      <th *ngIf="!check33" scope="col">Avg_Volt_LL &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortApparentPower('V_LL')"></fa-icon>
+      </th>
+      <th *ngIf="!check44" scope="col">Avg_Volt_LN &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortPowerFactor('V_LN')"></fa-icon>
+      </th>
+      <th *ngIf="!check55" scope="col">KW &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortKWH('KW')"></fa-icon>
+      </th>
+      <th *ngIf="!check66" scope="col">KVAR &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortkVARh('KVAR')"></fa-icon>
+      </th>
+      <th *ngIf="!check77" scope="col">KVA &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortkVAh('KVA')"></fa-icon>
+      </th>
+      <th *ngIf="!check88" scope="col">PF &nbsp;
+        <fa-icon [icon]="faSort" (click)="sortkVA('PF')"></fa-icon>
+      </th>
+   </thead>
+    <tbody>
+      <!--search sort and pagination html-->
+      <tr *ngFor="let mydata of data | orderBy:key:reverse ;">
+        <td>{{mydata.reading_time}}</td>
+        <td>{{mydata.Device_Id}}</td>
+        <!-- <td>{{mydata.Device_name}}</td> -->
+        <!-- <td>{{mydata.Client}}</td> -->
+        <td *ngIf="!check1">{{mydata.KWh_D}}</td>
+        <!-- <td *ngIf="!check2">{{mydata.KWh_DpR}}</td>
+        <td *ngIf="!check3">{{mydata.KWh_DnR}}</td> -->
+        <td *ngIf="!check4">{{mydata.KVARh_D}}</td>
+        <td *ngIf="!check5">{{mydata.KVARh_R}}</td>
+        <!-- <td *ngIf="!check6">{{mydata.KVARh_DpR}}</td>
+        <td *ngIf="!check7">{{mydata.KVARh_DnR}}</td> -->
+        <td *ngIf="!check8">{{mydata.KVAh_D}}</td>
+        <!-- <td *ngIf="!check9">{{mydata.KVAh_DpR}}</td>
+        <td *ngIf="!check11">{{mydata.KVAh_DnR}}</td> -->
+        <td *ngIf="!check22">{{mydata.Aavg}}</td>
+        <td *ngIf="!check33">{{mydata.V_LL}}</td>
+        <td *ngIf="!check44">{{mydata.V_LN}}</td>
+        <td *ngIf="!check55">{{mydata.KW}}</td>
+        <td *ngIf="!check66">{{mydata.KVAR}}</td>
+        <td *ngIf="!check77">{{mydata.KVA}}</td>
+        <td *ngIf="!check88">{{mydata.PF}}</td>
+      </tr>
+    </tbody>
+  
+    <!--pagination code-->
+
+  </table>
+  <div *ngIf="loader">
+    <img id="logo"  src="assets/8.gif" class="img-fluid" alt="" style="width: 8%;">  
+  </div> 
+
+  <pagination-controls (pageChange)="p = $event" style="width:80%"></pagination-controls>
+</div>

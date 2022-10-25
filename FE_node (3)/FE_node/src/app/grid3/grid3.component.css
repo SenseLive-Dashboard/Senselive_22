@@ -1,0 +1,38 @@
+::ng-deep .card.customClass,
+::ng-deep .card.customClass .card-header,
+::ng-deep .panel.customClass {
+  background-color: #44ce82;
+  color: white;
+}
+::ng-deep .btn-link{ /* code for the accordion heading*/
+  color: white;
+  text-decoration:none;
+  font-size: 15px;
+  font-weight: bold;
+  margin: -25px;
+}
+::ng-deep .btn-link:hover{ /* code for effect after hovering on accordion heading*/
+  color: grey;
+  text-decoration: none;
+}
+
+::ng-deep .panel.customClass .panel-body .btn{
+    margin-bottom:5px;
+    background-color: seagreen;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px;
+    width: 100px;
+    border: none;
+    border-radius:10px;
+    text-align: center;
+    outline: none;
+    font-size: 13px;
+    transition: 0.4s; 
+
+  
+}
+accordion-group{
+    margin:5px auto;
+    
+}

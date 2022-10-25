@@ -1,0 +1,45 @@
+.container{
+  box-shadow: 4px 4px 8px 0 rgb(0 0 0 / 80%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  width: 1000px;
+  height: 140%;
+  padding: 20px;
+  margin-right: 20px;
+
+}
+
+.dropdown-content{
+  float: right;
+  margin-top: 0px;
+}
+
+
+.btn {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  font-size: 13px;
+  height: 24px;
+  padding: 5px 19px;
+  border-radius: 50px;
+  background-image: linear-gradient(to right top,lime, #a8eb12);
+  box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
+  transition: all .2s ease-out;
+}
+
+.btn:hover{
+  background-image: linear-gradient(to right top,rgb(22, 156, 82), #097a1c);
+  box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%), 0 4px 6px 0 rgb(93 100 148 / 20%);
+}
+
+.container{
+  height: 527px;
+}
+.container1{
+  width: 100%;
+  overflow: hidden;
+  height: 70vh;
+}

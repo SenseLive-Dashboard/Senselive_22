@@ -1,0 +1,61 @@
+<div class="container  container1">
+  <!-- <select [(ngModel)]="selectedOption.values">
+    <option default *ngFor="let o of options">
+      {{o.name}}
+    </option>
+  </select> -->
+  
+  <select #teams (change)="onSelected(teams.value)">
+    <option default>Day</option>
+    <option>Week</option>
+    <option>Month</option>
+    <option>Year</option>
+  </select>
+  
+  <button class="btn" (click)="get_graph()">Show</button>
+  <button class="btn" (click)="toggle()">Change Graph</button>
+  
+  
+  <!-- <div class="dropdown-content-1"><a><button class="btn" (click)="calender()"  >Sort Custom</button>
+    <input type="datetime-local" [(ngModel)]=start value="2022-09-15" class="btn" >
+    
+  </a>
+</div> -->
+
+
+<div  id="chartContainer1"  class="chartContainer" ></div>
+
+</div>
+
+
+
+<!-- <div class="smeter">
+  &nbsp;
+      <!-- <fa-icon [icon]="faFilter" (click)="show1=!show1"></fa-icon> 
+      <button  class="smeter2" (click)="show1=!show1">Meter</button>
+      <select *ngIf="show1" class="form-select form-select-lg" name="meterDet" (change)="getmeterId($event)">
+        <option selected disabled>Select Meter</option>
+        <option *ngFor="let mymeter of meter" [value]="mymeter.meterid">{{mymeter.meterName}}</option>
+      </select>
+    </div>
+
+<div class="dropdown">
+  <button class="dropbtn">Filter 1</button>
+    <div class="dropdown-content">
+      <a><button class="btn" (click)="sortday()">Sort Day</button></a>
+      <a><button class="btn" (click)="sortweek()">Sort Week</button></a>
+      <a><button class="btn" (click)="sortmonth()">Sort Month</button></a>
+
+      <div class="dropdown-content"><a><button class="btn" (click)="sortday()">Sort Custom</button>
+        <input (change)="filterData()" type="date" id="startdate" value="2022-04-01">
+        <input (change)="filterData()" type="date" id="enddate" value="2022-04-15">     
+      </a></div>
+     
+
+    </div>
+  </div>
+
+<div class="chart-container" > 
+    <canvas  id="canvas99" >{{ chart }}</canvas>
+</div>
+ -->
