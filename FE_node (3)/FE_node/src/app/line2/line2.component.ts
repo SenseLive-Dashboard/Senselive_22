@@ -4,6 +4,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as $ from 'jquery'
 import { CommonModule } from '@angular/common';
 import { CanvasJS } from '../canvasJs/canvasjs.angular.component';
+import * as common from  './../baseurl'
 
 
 function graph(graph_type:any , frame : any =  "day" , graph:any ,device_id:any="EM6400NG03" , date:any="2021-12-01"  ){
@@ -92,7 +93,7 @@ function graph(graph_type:any , frame : any =  "day" , graph:any ,device_id:any=
       chart.render();
     }
   
-    $.getJSON("http://localhost:3000/api/"+graph+"/3292ayush?d_id="+device_id+"&date="+date, addData);
+    $.getJSON(common.apiUrl+"/"+graph+"/3292ayush?d_id="+device_id+"&date="+date, addData);
   })
 }
 

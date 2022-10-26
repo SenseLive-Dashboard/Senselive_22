@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs/internal/Observable';
 import * as CryptoJS from 'crypto-js';
+import * as common from './baseurl'
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,7 @@ export class ApiserviceService {
 
   constructor(private http:HttpClient) { }
 
-  apiUrl = "http://localhost:3000/api"
+  // apiUrl = "http://localhost:3000/api"
   // apiUrl = "http://backend-alb-1643516075.ap-south-1.elb.amazonaws.com/api"
 
   // signup
@@ -23,7 +24,7 @@ export class ApiserviceService {
   }
 
     // console.log(data, "<---  signup data")
-    return this.http.post(`${this.apiUrl}/signup`, send)
+    return this.http.post(`${common.apiUrl}/signup`, send)
   }
 
   
@@ -37,12 +38,12 @@ export class ApiserviceService {
        data: encrypted_data
     }
 
-    return this.http.post(`${this.apiUrl}/login`, send)
+    return this.http.post(`${common.apiUrl}/login`, send)
   }
 
   // Dashboard
   dashboard():Observable<any>{
-    return this.http.get(`${this.apiUrl}/dashboard`)
+    return this.http.get(`${common.apiUrl}/dashboard`)
 
   }
 
@@ -61,7 +62,7 @@ export class ApiserviceService {
     let send={
       email:encrypted_data
     }
-    return this.http.post(`${this.apiUrl}/signupone`, send)
+    return this.http.post(`${common.apiUrl}/signupone`, send)
   }
 
   // signup Two
@@ -71,12 +72,12 @@ export class ApiserviceService {
     let send={
       data:encrypted_data
     }
-    return this.http.post(`${this.apiUrl}/signuptwo`, send)
+    return this.http.post(`${common.apiUrl}/signuptwo`, send)
   }
 
   aaa(email:any):Observable<any>{
     // console.log("This is ApiService Email", email)
-    return this.http.post(`${this.apiUrl}/signupone`, email)
+    return this.http.post(`${common.apiUrl}/signupone`, email)
   }
 
   // forgotPassword One
@@ -86,7 +87,7 @@ export class ApiserviceService {
     let send={
       email:encrypted_data
     }
-    return this.http.post(`${this.apiUrl}/forgotPasswordOne`, send)
+    return this.http.post(`${common.apiUrl}/forgotPasswordOne`, send)
   }
 
 
@@ -97,7 +98,7 @@ export class ApiserviceService {
     let send={
       data:encrypted_data
     }
-    return this.http.post(`${this.apiUrl}/forgotPasswordTwo`, send)
+    return this.http.post(`${common.apiUrl}/forgotPasswordTwo`, send)
   }
 
 
@@ -108,13 +109,13 @@ export class ApiserviceService {
     let send={
       data:encrypted_data
     }
-    return this.http.post(`${this.apiUrl}/forgotPasswordThree`, send)
+    return this.http.post(`${common.apiUrl}/forgotPasswordThree`, send)
   }
 
   // tableData
   tableData():Observable<any>{
     // console.log("This is the content of tableData()")
-    return this.http.get(`${this.apiUrl}/tableData`)
+    return this.http.get(`${common.apiUrl}/tableData`)
 
   }
 

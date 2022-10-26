@@ -3,3 +3,5 @@
 export const endpoint:string="http://localhost:80/APIs";
 //nagtr@elkem.comElkemProject@2022
 //
+
+export const  apiUrl : any = "http://localhost:3000/api"; 

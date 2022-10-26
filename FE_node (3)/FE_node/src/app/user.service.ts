@@ -18,14 +18,14 @@ export class UserService {
   
   sendidMeter(m_id: string){ // table service
       console.log(m_id);
-      return fetch(`${this.apiUrl}/tableData/`+m_id)
+      return fetch(`${common.apiUrl}/tableData/`+m_id)
       // return this.httpClient.get<Sensor[]>(common.endpoint+'/Tabledata-MeterId.php?m_id='+m_id);
     }
 
   sendidMeter2(m_id: string){ // report service
     console.log(m_id);
     // return this.httpClient.get<Sensor[]>(common.endpoint+'/Tabledata-MeterId.php?m_id='+m_id);
-    return this.httpClient.get<Sensor[]>(`${this.apiUrl}/tableData/`+m_id);
+    return this.httpClient.get<Sensor[]>(`${common.apiUrl}/tableData/`+m_id);
     // return fetch(common.endpoint+'/Tabledata-MeterId.php?m_id='+m_id)
     
   }
@@ -38,7 +38,7 @@ export class UserService {
 displayReportData(value:string){
   // return this.httpClient.get<Report[]>(common.endpoint+'/getreport.php?value='+value);
   // return fetch(common.endpoint+'/getreport.php?value='+value)
-  return fetch(`${this.apiUrl}/getReport/`+value)
+  return fetch(`${common.apiUrl}/getReport/`+value)
 }
 
   displayAllMeterData(companyName:string){
@@ -47,32 +47,32 @@ displayReportData(value:string){
   }
   get_liveData(m_id: string) {
     // return this.httpClient.get<Sensor[]>(common.endpoint+'/Timestampsort_Live.php?m_id='+m_id);
-    return this.httpClient.get<Sensor[]>(`${this.apiUrl}/timeStampSort_Live/`+m_id);
+    return this.httpClient.get<Sensor[]>(`${common.apiUrl}/timeStampSort_Live/`+m_id);
   }
   get_minuteData(m_id: string) {
     // return this.httpClient.get<Sensor[]>(common.endpoint+'/Timestampsort_Minute.php?m_id='+m_id);
-    return this.httpClient.get<Sensor[]>(`${this.apiUrl}/timeStampSort_Minute/`+m_id);
+    return this.httpClient.get<Sensor[]>(`${common.apiUrl}/timeStampSort_Minute/`+m_id);
   }
   get_hourData(m_id: string) {
     // return this.httpClient.get<Sensor[]>(common.endpoint+'/Timestampsort_Hour.php?m_id='+m_id);
-    return this.httpClient.get<Sensor[]>(`${this.apiUrl}/timeStampSort_Hour/`+m_id);
+    return this.httpClient.get<Sensor[]>(`${common.apiUrl}/timeStampSort_Hour/`+m_id);
   }
   get_dayData(m_id: string) {
-    return this.httpClient.get<Sensor[]>(`${this.apiUrl}/timeStampSort_Day/`+m_id);
+    return this.httpClient.get<Sensor[]>(`${common.apiUrl}/timeStampSort_Day/`+m_id);
   }
   get_weekData(m_id: string) {
     // return this.httpClient.get<Sensor[]>(common.endpoint+'/Timestampsort_Week.php?m_id='+m_id);
-    return this.httpClient.get<Sensor[]>(`${this.apiUrl}/timeStampSort_Week/`+m_id);
+    return this.httpClient.get<Sensor[]>(`${common.apiUrl}/timeStampSort_Week/`+m_id);
 
   }
   get_monthData(m_id: string) {
     // return this.httpClient.get<Sensor[]>(common.endpoint+'/Timestampsort_Month.php?m_id='+m_id);
-    return this.httpClient.get<Sensor[]>(`${this.apiUrl}/timeStampSort_Month/`+m_id);
+    return this.httpClient.get<Sensor[]>(`${common.apiUrl}/timeStampSort_Month/`+m_id);
 
   }
   get_companyDrpdwn_data() {
     // return this.httpClient.get<Sensor[]>(common.endpoint+'/Filter_company.php');
-    return this.httpClient.get<Sensor[]>(`${this.apiUrl}/filterCompany`);
+    return this.httpClient.get<Sensor[]>(`${common.apiUrl}/filterCompany`);
     // return fetch(common.endpoint+'/Filter_company.php')
   }
   // add_report(initial_reading1:reportData): Observable<reportData> {
@@ -87,8 +87,8 @@ displayReportData(value:string){
   
     
     // console.log("call",this.httpClient.post<Report>(common.endpoint+"/addReport.php", initial_reading1));
-      // return this.httpClient.post<reportData>(`${this.apiUrl}/addReport`, initial_reading1);
-      return fetch(`${this.apiUrl}/addReport`, {
+      // return this.httpClient.post<reportData>(`${common.apiUrl}/addReport`, initial_reading1);
+      return fetch(`${common.apiUrl}/addReport`, {
         method:"POST",
         body: JSON.stringify(initial_reading1)
         // body: initial_reading1

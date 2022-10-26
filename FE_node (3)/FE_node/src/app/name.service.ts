@@ -15,7 +15,7 @@ export class NameService {
   constructor(private httpClient: HttpClient) {  }
   getCompanyData(){
     // return this.httpClient.get<Company[]>(common.endpoint +'/Get_companydata.php').pipe(
-    return this.httpClient.get<Company[]>(`${this.apiUrl}/getCompanyData`).pipe(
+    return this.httpClient.get<Company[]>(`${common.apiUrl}/getCompanyData`).pipe(
       map( Company => {
         const newCompany = [];
         for(let company of Company){
@@ -30,11 +30,11 @@ export class NameService {
   }
   getDataByCompanyname(CompanyName:string){
     // return this.httpClient.get<Company[]>(common.endpoint +'/Unique_CompanyName.php?CompanyName='+CompanyName);
-    return this.httpClient.get<Company[]>(`${this.apiUrl}/uniqueCompanyName/`+CompanyName);
+    return this.httpClient.get<Company[]>(`${common.apiUrl}/uniqueCompanyName/`+CompanyName);
   }
   getDataByEmail(Email:string){
     // return this.httpClient.get<Company[]>(common.endpoint +'/Unique_Email.php?Email='+Email);
-    return this.httpClient.get<Company[]>(`${this.apiUrl}/uniqueEmail/`+Email);
+    return this.httpClient.get<Company[]>(`${common.apiUrl}/uniqueEmail/`+Email);
   }
   registerCompany(company: Company): Observable<Company> {
     return this.httpClient.post<Company>(common.endpoint + '/Registration_company.php', company);
